@@ -1,0 +1,4 @@
+w3c-dom
+=======
+
+A gem that provides a W3C-compliant DOM on top of libxml2
