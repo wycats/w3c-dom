@@ -1,6 +1,7 @@
 require 'rubygems'
 require 'rake/gempackagetask'
 require 'rubygems/specification'
+require 'rubygems'
 require 'spec/rake/spectask'
 require 'date'
 
@@ -40,7 +41,8 @@ task :specs => :spec
 
 desc "Run all examples"
 Spec::Rake::SpecTask.new('spec') do |t|
-  t.spec_files = FileList['spec/**/*.rb']
+  t.spec_opts = %w(-c -f s)
+  t.spec_files = FileList['spec/**/*_spec.rb']
 end
 
 desc "install the gem locally"
